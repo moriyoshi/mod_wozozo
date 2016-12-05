@@ -5,7 +5,7 @@ import
   Open
   OS
 define
-  {Apache.setContentType 'Content-Type: text/html; charset=UTF-8'}
+  {Apache.setContentType 'text/html; charset=UTF-8'}
   {Apache.rputs "<!doctype html><html><body>"}
   {Apache.rflush}
   local
