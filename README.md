@@ -41,7 +41,7 @@ $ make APXS=${APXS} MOZART2_SRC_DIR=${MOZART_BUILDING_DIRECTORY}
 ```
 $ ${MOZART_INSTALL_PREFIX}/bin/ozc -x hello.oz
 $ go run test.go &
-$ httpd -f httpd.minimal.conf -DMOZART_INSTALL_PREFIX=${MOZART_INSTALL_PREFIX}
+$ CONGRATS_SERVER_HOST=localhost MOZART_INSTALL_PREFIX=${MOZART_INSTALL_PREFIX} httpd -f httpd.minimal.conf
 ```
 
 and hit http://localhost:8080/hello .

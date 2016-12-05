@@ -3,6 +3,7 @@ functor
 import
   Apache at 'x-oz://boot/Apache'
   Open
+  OS
 define
   {Apache.setContentType 'Content-Type: text/html; charset=UTF-8'}
   {Apache.rputs "<!doctype html><html><body>"}
@@ -31,7 +32,7 @@ define
     end
     Conn = {New Open.socket init(type:'stream' protocol:'tcp')}
   in
-    {Conn connect(host:'127.0.0.1' port:20408)}
+    {Conn connect(host:{OS.getEnv 'CONGRATS_SERVER_HOST'} port:20408)}
     {ReadAndPut}
   end
   {Apache.rputs "</body></html>"}

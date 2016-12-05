@@ -1,0 +1,20 @@
+version: '2'
+services:
+  server:
+    image: mod_wozozo
+    command: server
+    ports:
+      - "20408:20408"
+  client:
+    image: mod_wozozo
+    command: client
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      CONGRATS_SERVER_HOST: server
+    depends_on:
+      - server 
+    links:
+      - server
